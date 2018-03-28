@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.techgays.cityfm.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <!-- Middle Buttons / Social buttons -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/vol"
+        android:layout_alignStart="@+id/view"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:id="@+id/websiteBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/website_icon" />
+
+
+
+        <Button
+            android:id="@+id/phoneBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/phone_icon" />
+
+        <Button
+            android:id="@+id/emailBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/email_icon" />
+
+        <Button
+            android:id="@+id/txtBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/sms_icon" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/PauseButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/btn_pause"
+            android:onClick="onClickPauseButton"
+            android:layout_alignParentTop="true"/>
+
+        <Button
+            android:id="@+id/PlayButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/btn_play"
+            android:onClick="onClickPlayButton"
+            android:layout_alignParentTop="true" />
+
+        <Button
+            android:id="@+id/StopButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/btn_stop"
+            android:onClick="onClickStopButton"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/NextButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/btn_next"
+            android:enabled="false"
+            android:onClick="onClickNextButton"
+            tools:layout_editor_absoluteY="403dp"
+            tools:layout_editor_absoluteX="192dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/PreviousButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/btn_previous"
+            android:enabled="false"
+            android:onClick="onClickPreviousButton"
+            tools:layout_editor_absoluteY="403dp"
+            tools:layout_editor_absoluteX="104dp"
+            android:layout_toStartOf="@+id/NextButton" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="378dp"
+        android:layout_height="27dp"
+        android:gravity="center_horizontal"
+        android:minWidth="255dp"
+        android:text="@string/app_name"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteX="3dp"
+        android:layout_below="@+id/appBarLayout" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:layout_below="@+id/titleTextView"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="#555555"
+        android:id="@+id/view" />
+
+
+    <ImageView
+        android:id="@+id/stationImageView"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/station_default"
+        tools:layout_editor_absoluteY="168dp"
+        tools:layout_editor_absoluteX="99dp"
+        android:layout_below="@+id/artistTextView"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:id="@+id/artistTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Artist"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteY="106dp"
+        tools:layout_editor_absoluteX="177dp"
+        android:layout_below="@+id/albumTextView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/trackTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Current Playing Track"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="14sp"
+        android:textColor="@color/colorPrimary"
+        tools:layout_editor_absoluteY="51dp"
+        tools:layout_editor_absoluteX="126dp"
+        android:layout_below="@+id/view"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/albumTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="Album"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteY="79dp"
+        tools:layout_editor_absoluteX="174dp"
+        android:layout_below="@+id/trackTextView"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/trackTextView"
+        android:layout_alignBottom="@+id/trackTextView"
+        android:layout_alignRight="@+id/stationImageView"
+        android:gravity="right"
+        android:text=""
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="84dp"
+        android:layout_height="23dp"
+        android:text="@string/status_noconnection"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteY="129dp"
+        tools:layout_editor_absoluteX="150dp"
+        android:layout_below="@+id/stationImageView"
+        android:layout_centerHorizontal="true" />
+
+
+
+    <ImageView
+        android:id="@+id/vol"
+        android:layout_width="23dp"
+        android:layout_height="20dp"
+        android:src="@drawable/icon_volume"
+        tools:layout_editor_absoluteY="359dp"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_below="@+id/statusTextView"
+        android:layout_alignStart="@+id/linearLayout" />
+
+    <SeekBar
+        android:id="@+id/volumebar"
+        android:layout_width="314dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.73"
+        android:layout_alignBottom="@+id/vol"
+        android:layout_toEndOf="@+id/vol" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        ads:adUnitId="@string/admob_publisher_id"
+        ads:adSize="BANNER"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Copy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98"
+        android:id="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+
+</RelativeLayout>

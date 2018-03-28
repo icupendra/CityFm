@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.techgays.cityfm.MainActivity">
+
+    <item
+        android:id="@+id/radio"
+        android:title="@string/menu_radio"
+        android:icon="@drawable/menu_radio" />
+    <item
+        android:id="@+id/stations"
+        android:title="@string/menu_stations"
+        android:icon="@drawable/menu_stations"
+        android:visible="false"/>
+    <item
+        android:id="@+id/facebook"
+        android:title="@string/menu_facebook"
+        android:icon="@drawable/menu_facebook" />
+    <item
+        android:id="@+id/twitter"
+        android:title="@string/menu_twitter"
+        android:icon="@drawable/menu_twitter" />
+    <item
+        android:id="@+id/about"
+        android:title="@string/menu_about"
+        android:icon="@drawable/menu_about" />
+    <item
+        android:id="@+id/exit"
+        android:title="@string/menu_exit"
+        android:icon="@drawable/menu_exit"
+        app:showAsAction="never"
+        android:orderInCategory="100"/>
+
+</menu>

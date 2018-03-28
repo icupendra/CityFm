@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.techgays.cityfm.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/radioTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:visibility="gone"
+        android:textColor="#ffee9d53"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/radio_title" />
+
+    <ImageView
+        android:id="@+id/btnExit"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/exit"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"/>
+
+    <ImageView
+        android:id="@+id/btnMenu"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:visibility="gone"
+        android:layout_gravity="end"
+        android:src="@drawable/switch_page"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"/>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="25dp"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/stationImageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/station_default"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:background="#710c1649"/>
+
+        <TextView
+            android:id="@+id/statusTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="@string/status_noconnection"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="0:00"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="14sp"
+            android:textColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0px"
+            android:layout_weight="52"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="57"
+                android:orientation="horizontal" />
+
+
+
+
+            <FrameLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="412">
+
+                <ImageView
+                    android:id="@+id/mute"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/volume_on" />
+
+                <SeekBar
+                    android:id="@+id/volumebar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="25dp"/>
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="67"
+                android:orientation="horizontal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="104"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="97"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="40"
+                android:alpha="0.4"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/PreviousButton"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/previous"
+                    android:onClick="onClickPreviousButton"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="23"
+                android:orientation="vertical" />
+
+
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="50"
+                android:alpha="06"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/PlayButton"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/play"
+                    android:onClick="onClickPlayButton"/>
+
+                <Button
+                    android:id="@+id/PauseButton"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/pause"
+                    android:onClick="onClickPauseButton"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="50"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/StopButton"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/stop"
+                    android:onClick="onClickStopButton"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="23"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="40"
+                android:alpha="0.4"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/NextButton"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/next"
+                    android:onClick="onClickNextButton"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0px"
+                android:layout_height="fill_parent"
+                android:layout_weight="97"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:baselineAligned="false"
+            android:alpha="0.4"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/linearLayout">
+
+            <Button
+                android:id="@+id/websiteBtn"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/website_icon" />
+
+
+
+            <Button
+                android:id="@+id/phoneBtn"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/phone_icon" />
+
+            <Button
+                android:id="@+id/emailBtn"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/email_icon" />
+
+            <Button
+                android:id="@+id/txtBtn"
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/sms_icon" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Copy"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="5dp"
+        android:textAlignment="center"/>
+
+</FrameLayout>
